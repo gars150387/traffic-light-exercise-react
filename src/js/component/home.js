@@ -1,24 +1,32 @@
 import React from "react";
+import Lights from "./lights";
+import { useEffect, useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 export function Home() {
+	const [colorStop, setColor1] = useState("red");
+	const [colorWarn, setColor2] = useState("yellow");
+	const [colorGo, setColor3] = useState("green");
+
+	useEffect(() => {
+		setInterval(() => {
+			setColor1(colorStop => colorStop);
+		});
+	}, []);
+	useEffect(() => {
+		setInterval(() => {
+			setColor2(colorWarn => colorWarn);
+		});
+	}, []);
+	useEffect(() => {
+		setInterval(() => {
+			setColor3(colorGo => colorGo);
+		});
+	}, []);
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="row justify-content-center mt-5 border-rounded">
+			<Lights color={colorStop} />
+			<Lights color={colorWarn} />
+			<Lights color={colorGo} />
 		</div>
 	);
 }
