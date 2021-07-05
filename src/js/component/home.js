@@ -4,19 +4,19 @@ import { useEffect, useState } from "react";
 
 export function Home() {
 	const [color, setColor] = useState("black");
+	const [color2, setColor2] = useState("black");
+	const [Color3, setColor3] = useState("black");
 
 	const handleClick = () => {
 		setColor("red");
-		const [color, setColor] = useState("black");
 	};
 
 	const handleClick2 = () => {
-		setColor("yellow");
-		const [color, setColor] = useState("black");
+		setColor2("yellow");
 	};
 
 	const handleClick3 = () => {
-		setColor("green");
+		setColor3("green");
 	};
 
 	return (
@@ -24,15 +24,21 @@ export function Home() {
 			<button
 				onClick={handleClick}
 				className="btn-dark btn-large"
-				style={{ width: "80px", height: "80px" }}></button>
+				style={{ width: "80px", height: "80px" }}>
+				{color}
+			</button>
 			<button
 				onClick={handleClick2}
 				className="btn-dark btn-large"
-				style={{ width: "80px", height: "80px" }}></button>
+				style={{ width: "80px", height: "80px" }}>
+				{color2}
+			</button>
 			<button
 				onClick={handleClick3}
 				className="btn-dark btn-large"
-				style={{ width: "80px", height: "80px" }}></button>
+				style={{ width: "80px", height: "80px" }}>
+				{Color3}
+			</button>
 		</div>
 	);
 }
