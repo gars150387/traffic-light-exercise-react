@@ -1,9 +1,13 @@
 import React from "react";
+import { prototype } from "module";
 
-const lights = ({ color }) => {
+const lights = ({ option }) => {
 	return (
-		<button onClick={color} type="button" className="btn btn-lg">
-			{color}
+		<button
+			onClick={handleClick}
+			className="btn-dark btn-large"
+			style={{ width: "80px", height: "80px" }}>
+			{option}
 		</button>
 	);
 };

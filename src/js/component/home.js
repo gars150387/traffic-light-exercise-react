@@ -1,5 +1,5 @@
 import React from "react";
-import Lights from "./lights";
+// import Lights from "./lights";
 import { useEffect, useState } from "react";
 
 export function Home() {
@@ -20,7 +20,7 @@ export function Home() {
 	};
 
 	return (
-		<div className="d-block mt-5 border-rounded">
+		<div className="col-6">
 			<button
 				onClick={handleClick}
 				className="btn-dark btn-large"
