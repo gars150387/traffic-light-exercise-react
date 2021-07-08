@@ -1,44 +1,29 @@
-import React from "react";
-// import Lights from "./lights";
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export function Home() {
-	const [color, setColor] = useState("black");
-	const [color2, setColor2] = useState("black");
-	const [Color3, setColor3] = useState("black");
-
-	const handleClick = () => {
-		setColor("red");
-	};
-
-	const handleClick2 = () => {
-		setColor2("yellow");
-	};
-
-	const handleClick3 = () => {
-		setColor3("green");
-	};
-
+	const [selectedColor, setSelectedColor] = useState("red");
 	return (
-		<div className="col-6">
-			<button
-				onClick={handleClick}
-				className="btn-dark btn-large"
-				style={{ width: "80px", height: "80px" }}>
-				{color}
-			</button>
-			<button
-				onClick={handleClick2}
-				className="btn-dark btn-large"
-				style={{ width: "80px", height: "80px" }}>
-				{color2}
-			</button>
-			<button
-				onClick={handleClick3}
-				className="btn-dark btn-large"
-				style={{ width: "80px", height: "80px" }}>
-				{Color3}
-			</button>
+		<div className="container">
+			<div className="traffic-top"></div>
+			<div className="traffic-light">
+				<div
+					onClick={() => setSelectedColor("red")}
+					className={
+						"light red" + (selectedColor === "red" ? " glow" : "")
+					}></div>
+				<div
+					onClick={() => setSelectedColor("yellow")}
+					className={
+						"light yellow" +
+						(selectedColor === "yellow" ? " glow" : "")
+					}></div>
+				<div
+					onClick={() => setSelectedColor("green")}
+					className={
+						"light green" +
+						(selectedColor === "green" ? " glow" : "")
+					}></div>
+			</div>
 		</div>
 	);
 }
